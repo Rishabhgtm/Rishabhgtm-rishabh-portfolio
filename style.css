@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0   ;
+    background: black !important;
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.name {
+    color: rgba(255, 50, 50, 0.932);
+    text-shadow: red 0px 0px 5px;
+}
+
+nav {
+    display: flex;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a:hover {
+    box-shadow: 0 0 5px aqua;
+    transform: translate3d(0, 0, 5px);
+}
+
+#burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+/* Home-section */
+#home-section {
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Style the social container */
+#social-container {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the social icons */
+.icon-social {
+    justify-content: center;
+    display: flex;
+}
+
+.icon-social a {
+    margin: 0 10px;
+}
+.home-icon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(1px 1px 5px rgb(255, 0, 0));
+    transition: filter 0.3s ease;
+    border-radius: 50%;
+}
+
+.home-icon:hover {
+    background-color: #ff8c00;
+    transform: translatey(-25%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Increased shadow intensity on hover */
+    filter: drop-shadow(1px 1px 8px rgb(255, 0, 0)) drop-shadow(1px 1px 8px rgb(255, 196, 0));
+
+}
+
+
+/* Style the profile container */
+#profile-container {
+    display:flex;
+    justify-content:space-around;    
+    justify-content: left;
+    align-items: center;
+
+}
+
+/* Style the text within the profile container */
+.text h2 {
+    display: flex;
+    padding-left: 150px;
+    font-size: 4em;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.text h2 span {
+    position: relative;
+    color: #340000;
+    animation: displayText 9s infinite;
+    animation-delay: calc(-3s * var(--i));
+}
+
+@keyframes displayText {
+    0% {
+        display: inline-block;
+    }
+    33.33%, 100% {
+        display: none;
+    }
+}
+
+.text h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #01fe87;
+    border-right: 4px solid #01fe87;
+    filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 25px #01fe87);
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
+
+/* Style the profile image */
+.profile-image img {
+    margin-left: 2.5%;
+    display: flex;
+    flex-direction: column;
+    width: 400px; /* Adjust as needed */
+    height: 480px; /* Adjust as needed */
+    object-fit: cover;
+    margin-top: 10px;
+    align-items:center;
+    justify-content: right;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.profile-image {
+    width: 420px;
+    height: 500px;
+    background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+    animation: home 4s linear infinite;
+    justify-content: right;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes home {
+    0% {
+        --a: 0deg;
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+/* Style the CV button */
+
+.download-cv {
+    position: relative;
+    width: 120px; /* Increased button width for better readability */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Darkened background color */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* Increased shadow intensity */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: #ff8c00;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Increased shadow intensity on hover */
+    filter: drop-shadow(1px 1px 8px rgb(255, 0, 0)) drop-shadow(1px 1px 8px rgb(255, 196, 0));
+}
+/* About section */
+
+#about-section {
+    margin: 3%;
+    padding: 3%;
+}
+
+.head {
+    text-align: center;
+}
+
+.photo-container {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin: 20px auto;
+    background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+    animation: fr 4s linear infinite;
+    border-radius: 50%;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes fr {
+    0% {
+        --a: 0deg;
+    }
+    100% {
+        --a: 100deg;
+    }
+}
+
+.photo-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), #45f3ff 0%, #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+    animation: fr 4s linear infinite;
+    animation-delay: -1s;
+    border-radius: 50%;
+}
+
+.photo-container img {
+    position: absolute;
+    inset: 8px;
+    width: 190px;
+    height: 190px;
+    object-position: center, center;
+    /* This property ensures that the image covers the entire box */
+    border: 3px solid #25252b;
+    border-radius: 50%;
+}
+
+.side-by-side-boxes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.experience-box,
+.education-box {
+    text-align: center;
+    width: 35%;
+    padding: 5px;
+    margin: 2px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black !important;
+    gap: 5px;
+    box-shadow: 0px 0px 50px rgb(255, 0, 0);
+}
+
+.about-text {
+    text-align: center;
+}
+
+#auto-text {
+    color: #ff0000;
+}
+
+#auto-text1 {
+    color: royalblue !important;
+}
+
+#auto-text2 {
+    color: gold;
+}
+
+/* Experience section */
+#experience-section {
+    margin: 3%;
+    padding: 3%;
+    position: relative;
+    color: rgb(255, 255, 255) !important;
+    text-align: center;
+    /* Center text */
+    top: 0%;
+}
+
+.experience-section {
+    align-items: center;
+}
+
+.skills-section {
+    width: auto;
+    background-color: #2d2424;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.experience-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: auto;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #db3434;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    background: #000000;
+    text-align: center;
+    /* Center text in the box */
+    justify-content: space-around;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+/* Add these styles to your existing CSS */
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: auto;
+    background-color: #2d2424;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.project-box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #db3434;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Contact section */
+#contact-section {
+    margin: 0; /* Adjusted margin to remove gap */
+    padding: 3%;
+    min-height: 75vh;
+    
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin: 1%;
+    background-color: #111;
+}
+
+.glowing-line {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    animation: glowing 2s linear infinite;
+}
+
+.glowing-line::before,
+.glowing-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #111;
+}
+
+.glowing-line::before {
+    left: 0;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    animation: glowing-start 2s linear infinite;
+}
+
+.glowing-line::after {
+    right: 0;
+    background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet);
+    animation: glowing-end 2s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+}
+
+@keyframes glowing-start {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        box-shadow: 20px 0 20px rgba(255, 255, 255, 0.9), 30px 0 30px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+}
+
+@keyframes glowing-end {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        box-shadow: -20px 0 20px rgba(255, 255, 255, 0.9), -30px 0 30px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+}
+
+.contact-container {
+    text-align: center;
+    background: #ccc;
+}
+
+.contact-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin: 5%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    margin: 1%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #297fb8;
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(71, 60, 60);
+        box-shadow: rgb(255, 0, 0) 0px 0px 3px;
+        z-index: 1;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+    .line {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        margin: 1%;
+        background-color: #111;
+        margin-top: 2%;
+        margin-bottom: 2%;
+
+    }
+
+    #social-container {
+        padding: 10px;
+    }
+
+    .icon-social a {
+        margin: 0 5px;
+    }
+
+    .home-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #profile-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+        margin-bottom:5px;
+    }
+
+    .text h2 {
+        
+        padding-left: 0;
+        text-align: center;
+        font-size: 2em;
+
+    }
+    .profile-image img {
+        margin-left: 2.5%;
+        width: 280px; /* Adjust as needed */
+        height: 360px; /* Adjust as needed */
+        margin-top: 10px;
+        align-items:center;
+        justify-content: center;
+    }
+    .profile-image {
+        width: 300px;
+        height: 380px;
+        background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+        animation: fr 4s linear infinite;
+        justify-content: right;
+}
+.download-cv{
+    margin-top: 2%;
+}
+}
